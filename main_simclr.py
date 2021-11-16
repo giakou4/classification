@@ -158,6 +158,8 @@ def main():
     use_early_stopping = False
     use_scheduler = True
     save_file = os.path.join('./results/', 'model.pth')
+    if not os.path.isdir('./results/'):
+         os.makedirs('./results/')
     
     contrastive_transform = transforms.Compose([
                                        transforms.RandomHorizontalFlip(),
