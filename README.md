@@ -19,7 +19,7 @@ In recent years, a resurgence of work in CL has led to major advances in selfsup
 In the classical (binary) supervised learning problem one aims at finding a model that predicts a value of a target variable, `y ∈ {0, 1}`, for a given instance, `x`. In the case of the MIL problem, however, instead of a single instance there is a bag of instances, `X = {x1, . . . , xn}`, that exhibit neither dependency nor ordering among each other. We assume that `n` could vary for different bags. There is also a single binary label `Y` associated with the bag. Furthermore, we assume that individual labels exist for the instances within a bag, i.e., `y1,...,yn` and `yk ∈ {0, 1}`, for `k = 1,..., n`, however, there is no access to those labels and they remain unknown during training. 
 
 <p align="center">
-<img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-030-38617-7_6/MediaObjects/468866_1_En_6_Fig1_HTML.png" alt="Multiple Instance Learning" style="height: 300px; width:600px;"/>
+<img src="https://www.researchgate.net/publication/315925709/figure/fig1/AS:555691916382209@1509498685605/An-illustration-of-the-concept-of-multiple-instance-learning-In-MIL-training-examples.png" alt="Multiple Instance Learning" style="height: 300px; width:600px;"/>
 </p>
   
 ## Requirements
