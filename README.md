@@ -35,6 +35,7 @@ More information on:
 
 
 ## Requirements
+
 ```
 torch
 torchvision
