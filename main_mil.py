@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 from util import EarlyStopping, MetricMonitor, Attention, BagDataset
 
    
-class CNN(torch.nn.Module):
+class Model(torch.nn.Module):
     "Convolutional Neural Network"
     def __init__(self):
-        super(CNN, self).__init__()
+        super(Model, self).__init__()
         # L1 (?, 28, 28, 1) -> (?, 28, 28, 32) -> (?, 14, 14, 32)
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1),
@@ -105,7 +105,7 @@ def main():
     use_early_stopping = False
     use_scheduler = True
     
-    model = Attention(CNN()).cuda() if torch.cuda.is_available() else Attention(CNN())
+    model = Attention(Model()).cuda() if torch.cuda.is_available() else Attention(Model())
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-3)
     criterion = torch.nn.CrossEntropyLoss()
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.9)

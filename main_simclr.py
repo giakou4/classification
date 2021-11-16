@@ -187,7 +187,7 @@ def main():
     
     # Part 1
     encoder = Encoder()
-    model = SupCon(encoder, head='mlp', feat_dim=625)
+    model = SupCon(encoder, head='mlp', feat_dim=128)
     criterion = SupConLoss(temperature=0.07)
     if torch.cuda.is_available():
         model = model.cuda()

@@ -14,9 +14,9 @@ import matplotlib.pyplot as plt
 from util import EarlyStopping, MetricMonitor
 
    
-class CNN(torch.nn.Module):
+class Model(torch.nn.Module):
     def __init__(self):
-        super(CNN, self).__init__()
+        super(Model, self).__init__()
         # L1 (?, 28, 28, 1) -> (?, 28, 28, 32) -> (?, 14, 14, 32)
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1),
@@ -82,7 +82,7 @@ def training(epoch, model, train_loader, optimizer, criterion):
             data,labels = data.cuda(), labels.cuda()
         data , labels = torch.autograd.Variable(data,False), torch.autograd.Variable(labels)
         output = model(data.float())
-        loss = criterion(output,labels) 
+        loss = criterion(output, labels) 
         accuracy = calculate_accuracy(output, labels)
         metric_monitor.update("Loss", loss.item())
         metric_monitor.update("Accuracy", accuracy)
@@ -120,7 +120,7 @@ def main():
     use_early_stopping = False
     use_scheduler = True
     
-    model = CNN().cuda() if torch.cuda.is_available() else CNN()
+    model = Model().cuda() if torch.cuda.is_available() else Model()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-3)
     criterion = torch.nn.CrossEntropyLoss()
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.9)
