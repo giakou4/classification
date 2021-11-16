@@ -15,7 +15,7 @@ from util import EarlyStopping, MetricMonitor, Attention, BagDataset
 
    
 class CNN(torch.nn.Module):
-    "Encoder network"
+    "Convolutional Neural Network"
     def __init__(self):
         super(CNN, self).__init__()
         # L1 (?, 28, 28, 1) -> (?, 28, 28, 32) -> (?, 14, 14, 32)
