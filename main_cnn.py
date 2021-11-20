@@ -91,7 +91,7 @@ def training(epoch, model, train_loader, optimizer, criterion):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    print("[Epoch: {epoch}] Train     | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Train      | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
@@ -99,18 +99,19 @@ def validation(epoch, model, valid_loader, criterion):
     "Validation over an epoch"
     metric_monitor = MetricMonitor()
     model.eval()
-    for batch_idx, (data, labels) in enumerate(valid_loader):
-        if torch.cuda.is_available():
-            data,labels = data.cuda(), labels.cuda()
-        data, labels = torch.autograd.Variable(data,False), torch.autograd.Variable(labels)
-        output = model(data.float())
-        loss = criterion(output,labels) 
-        accuracy = calculate_accuracy(output, labels)
-        metric_monitor.update("Loss", loss.item())
-        metric_monitor.update("Accuracy", accuracy)
-        data.detach()
-        labels.detach()
-    print("[Epoch: {epoch}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    with torch.no_grad():
+        for batch_idx, (data, labels) in enumerate(valid_loader):
+            if torch.cuda.is_available():
+                data,labels = data.cuda(), labels.cuda()
+            data, labels = torch.autograd.Variable(data,False), torch.autograd.Variable(labels)
+            output = model(data.float())
+            loss = criterion(output,labels) 
+            accuracy = calculate_accuracy(output, labels)
+            metric_monitor.update("Loss", loss.item())
+            metric_monitor.update("Accuracy", accuracy)
+            data.detach()
+            labels.detach()
+    print("[Epoch: {epoch:03d}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
@@ -158,10 +159,10 @@ def main():
         if use_early_stopping: 
             early_stopping(valid_loss, model)
             
-        if early_stopping.early_stop:
-            print('Early stopping at epoch', epoch)
-            #model.load_state_dict(torch.load('checkpoint.pt'))
-            break
+            if early_stopping.early_stop:
+                print('Early stopping at epoch', epoch)
+                #model.load_state_dict(torch.load('checkpoint.pt'))
+                break
      
     plt.plot(range(1,len(train_losses)+1), train_losses, color='b', label = 'training loss')
     plt.plot(range(1,len(valid_losses)+1), valid_losses, color='r', linestyle='dashed', label = 'validation loss')

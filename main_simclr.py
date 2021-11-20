@@ -102,7 +102,7 @@ def pretraining(epoch, model, contrastive_loader, optimizer, criterion, method='
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    print("[Epoch: {epoch}] Contrastive Pre-train | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Contrastive Pre-train | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Learning Rate']['avg']
         
 def training(epoch, model, classifier, train_loader, optimizer, criterion):
@@ -126,7 +126,7 @@ def training(epoch, model, classifier, train_loader, optimizer, criterion):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    print("[Epoch: {epoch}] Train     | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Train      | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
@@ -148,13 +148,13 @@ def validation(epoch, model, classifier, valid_loader, criterion):
             metric_monitor.update("Accuracy", accuracy)
             data.detach()
             labels.detach()
-    print("[Epoch: {epoch}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
 def main():
     
-    num_epochs = 20
+    num_epochs = 2
     use_early_stopping = False
     use_scheduler = True
     save_file = os.path.join('./results/', 'model.pth')
@@ -213,7 +213,7 @@ def main():
     plt.legend(), plt.ylabel('loss'), plt.xlabel('epochs'), plt.title('Loss'), plt.show()
     
     # Part 2
-    model = SupCon(encoder, head='mlp', feat_dim=625)
+    model = SupCon(encoder, head='mlp', feat_dim=128)
     classifier = LinearClassifier()
     criterion = torch.nn.CrossEntropyLoss()
     
@@ -253,10 +253,10 @@ def main():
         if use_early_stopping: 
             early_stopping(valid_loss, model)
             
-        if early_stopping.early_stop:
-            print('Early stopping at epoch', epoch)
-            #model.load_state_dict(torch.load('checkpoint.pt'))
-            break
+            if early_stopping.early_stop:
+                print('Early stopping at epoch', epoch)
+                #model.load_state_dict(torch.load('checkpoint.pt'))
+                break
      
     plt.plot(range(1,len(train_losses)+1), train_losses, color='b', label = 'training loss')
     plt.plot(range(1,len(valid_losses)+1), valid_losses, color='r', linestyle='dashed', label = 'validation loss')

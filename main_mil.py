@@ -78,7 +78,7 @@ def training(epoch, model, train_loader, optimizer, criterion):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    print("[Epoch: {epoch}] Train     | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Train      | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
@@ -95,13 +95,13 @@ def validation(epoch, model, valid_loader, criterion):
         error, predicted_label = model.calculate_classification_error(data.float(), bag_label)
         metric_monitor.update("Loss", loss.item())
         metric_monitor.update("Accuracy", 1-error)
-    print("[Epoch: {epoch}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
+    print("[Epoch: {epoch:03d}] Validation | {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor))
     return metric_monitor.metrics['Loss']['avg'], metric_monitor.metrics['Accuracy']['avg']
 
 
 def main():
     
-    num_epochs = 100
+    num_epochs = 10
     use_early_stopping = False
     use_scheduler = True
     
@@ -169,10 +169,10 @@ def main():
         if use_early_stopping: 
             early_stopping(valid_loss, model)
             
-        if early_stopping.early_stop:
-            print('Early stopping at epoch', epoch)
-            #model.load_state_dict(torch.load('checkpoint.pt'))
-            break
+            if early_stopping.early_stop:
+                print('Early stopping at epoch', epoch)
+                #model.load_state_dict(torch.load('checkpoint.pt'))
+                break
      
     plt.plot(range(1,len(train_losses)+1), train_losses, color='b', label = 'training loss')
     plt.plot(range(1,len(valid_losses)+1), valid_losses, color='r', linestyle='dashed', label = 'validation loss')
