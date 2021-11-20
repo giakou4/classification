@@ -158,10 +158,10 @@ def main():
         if use_early_stopping: 
             early_stopping(valid_loss, model)
             
-        if early_stopping.early_stop:
-            print('Early stopping at epoch', epoch)
-            #model.load_state_dict(torch.load('checkpoint.pt'))
-            break
+            if early_stopping.early_stop:
+                print('Early stopping at epoch', epoch)
+                #model.load_state_dict(torch.load('checkpoint.pt'))
+                break
      
     plt.plot(range(1,len(train_losses)+1), train_losses, color='b', label = 'training loss')
     plt.plot(range(1,len(valid_losses)+1), valid_losses, color='r', linestyle='dashed', label = 'validation loss')
