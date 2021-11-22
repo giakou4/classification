@@ -44,7 +44,7 @@ numpy
 ```
 
 ## 5. Note
-This is for demonstation purposed only. The results are not validated correctly. That means that no validation protocol is applied (e.g. KFold Cross Validation). The parameters are not optimized, rather than arbitrarily chosen. The network is chosen to demonstate every possible CNN layer. Early Stopping and Scheduler are implemented for demonstration aswell.
+This is for demonstation purposes only. The results are not validated correctly. That means that no validation protocol is applied (e.g. KFold Cross Validation). The parameters are not optimized, rather than arbitrarily chosen. The network is chosen to demonstate every possible CNN layer. Early Stopping and Scheduler are implemented for demonstration aswell.
 
 ## 6. Results
 ### 6.1 CNN
