@@ -61,7 +61,6 @@ This is for demonstation purposes only. The results are not validated correctly.
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/mil.jpg?raw=true">
 </p>
-The first row uses the attention mechanism. The second uses the gated attention. The third uses mean pooling and the fourth max pooling.
 
 ## 7. Support
 
