@@ -57,7 +57,7 @@ This is for demonstation purposes only. The results are not validated correctly.
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/simclr.jpg?raw=true">
 </p>
 
-### 6.3 Multiple Instance Learning
+### 6.3 MIL
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/mil.jpg?raw=true">
 </p>
