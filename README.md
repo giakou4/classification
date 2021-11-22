@@ -48,12 +48,20 @@ This is for demonstation purposed only. The results are not validated correctly.
 
 ## 6. Results
 ### 6.1 CNN
+<p align="center">
 ![alt cnn](https://github.com/giakou4/MNIST_classification/blob/main/results/cnn.jpg?raw=true)
+</p>
 
 ### 6.2 SimCLR
+<p align="center">
+![alt cnn](https://github.com/giakou4/MNIST_classification/blob/main/results/simclr.jpg?raw=true)
+</p>
 
 ### 6.3 Multiple Instance Learning
-
+<p align="center">
+![alt cnn](https://github.com/giakou4/MNIST_classification/blob/main/results/mil.jpg?raw=true)
+</p>
+The first row uses the attention mechanism. The second uses the gated attention. The third uses mean pooling and the fourth max pooling.
 
 ## 7. Support
 
