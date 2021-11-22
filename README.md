@@ -46,11 +46,19 @@ numpy
 ## 5. Note
 This is for demonstation purposed only. The results are not validated correctly. That means that no validation protocol is applied (e.g. KFold Cross Validation). The parameters are not optimized, rather than arbitrarily chosen. The network is chosen to demonstate every possible CNN layer. Early Stopping and Scheduler are implemented for demonstration aswell.
 
+## 6. Results
+### 6.1 CNN
+![alt cnn](https://github.com/giakou4/MNIST_classification/blob/main/results/cnn.jpg?raw=true)
 
-## 6. Support
+### 6.2 SimCLR
+
+### 6.3 Multiple Instance Learning
+
+
+## 7. Support
 
 Reach out to me:
 - [giakou4's email](mailto:giakonick98@gmail.com "giakonick98@gmail.com")
 
-## 7. License
+## 8. License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/giakou4/MNIST_classification/LICENSE)
