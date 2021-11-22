@@ -11,7 +11,7 @@ seperate number 9 among all other numbers.
 import torch
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
-from util import EarlyStopping, MetricMonitor, Attention, BagDataset
+from util import EarlyStopping, MetricMonitor, Attention, GatedAttention, MIL_pool, BagDataset
 
    
 class Model(torch.nn.Module):
@@ -101,11 +101,21 @@ def validation(epoch, model, valid_loader, criterion):
 
 def main():
     
-    num_epochs = 10
-    use_early_stopping = False
+    num_epochs = 100
+    use_early_stopping = True
     use_scheduler = True
+    attention_type = 'mil_pool_max' # choose among attention, gated_attention, mil_pool_mean, mil_pool_max
     
-    model = Attention(Model()).cuda() if torch.cuda.is_available() else Attention(Model())
+    if attention_type == 'attention': 
+        model = Attention(Model()).cuda() if torch.cuda.is_available() else Attention(Model())
+    elif attention_type == 'gated_attention':
+        model = GatedAttention(Model()).cuda() if torch.cuda.is_available() else GatedAttention(Model())
+    elif attention_type == 'mil_pool_mean':
+        model = MIL_pool(Model(), 'mean').cuda() if torch.cuda.is_available() else MIL_pool(Model(), 'mean')
+    elif attention_type == 'mil_pool_max':
+        model = MIL_pool(Model(), 'max').cuda() if torch.cuda.is_available() else MIL_pool(Model(), 'max')
+    else:
+        raise NotImplementedError('Attention mechanism is not implemented or does not exist')
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-3)
     criterion = torch.nn.CrossEntropyLoss()
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.9)
