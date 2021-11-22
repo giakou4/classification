@@ -104,7 +104,7 @@ def main():
     num_epochs = 100
     use_early_stopping = True
     use_scheduler = True
-    attention_type = 'mil_pool_max' # choose among attention, gated_attention, mil_pool_mean, mil_pool_max
+    attention_type = 'attention' # choose among 'attention', 'gated_attention', 'mil_pool_mean', 'mil_pool_max'
     
     if attention_type == 'attention': 
         model = Attention(Model()).cuda() if torch.cuda.is_available() else Attention(Model())
