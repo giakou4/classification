@@ -154,9 +154,10 @@ def validation(epoch, model, classifier, valid_loader, criterion):
 
 def main():
     
-    num_epochs = 2
-    use_early_stopping = False
+    num_epochs = 100
+    use_early_stopping = True
     use_scheduler = True
+    head_type = 'mlp' # choose among 'mlp' and 'linear"
     save_file = os.path.join('./results/', 'model.pth')
     if not os.path.isdir('./results/'):
          os.makedirs('./results/')
@@ -187,7 +188,7 @@ def main():
     
     # Part 1
     encoder = Encoder()
-    model = SupCon(encoder, head='mlp', feat_dim=128)
+    model = SupCon(encoder, head=head_type, feat_dim=128)
     criterion = SupConLoss(temperature=0.07)
     if torch.cuda.is_available():
         model = model.cuda()
@@ -213,7 +214,7 @@ def main():
     plt.legend(), plt.ylabel('loss'), plt.xlabel('epochs'), plt.title('Loss'), plt.show()
     
     # Part 2
-    model = SupCon(encoder, head='mlp', feat_dim=128)
+    model = SupCon(encoder, head=head_type, feat_dim=128)
     classifier = LinearClassifier()
     criterion = torch.nn.CrossEntropyLoss()
     
