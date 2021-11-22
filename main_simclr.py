@@ -158,6 +158,7 @@ def main():
     use_early_stopping = True
     use_scheduler = True
     head_type = 'mlp' # choose among 'mlp' and 'linear"
+    method = 'SimCLR' # choose among 'SimCLR' and 'SupCon'
     save_file = os.path.join('./results/', 'model.pth')
     if not os.path.isdir('./results/'):
          os.makedirs('./results/')
@@ -199,7 +200,7 @@ def main():
     contrastive_loss, contrastive_lr = [], []
     
     for epoch in range(1, num_epochs+1):
-        loss, lr = pretraining(epoch, model, contrastive_loader, optimizer, criterion, method='SimCLR')
+        loss, lr = pretraining(epoch, model, contrastive_loader, optimizer, criterion, method=method)
         if use_scheduler:
             scheduler.step()
         contrastive_loss.append(loss)
