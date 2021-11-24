@@ -18,8 +18,8 @@ In recent years, a resurgence of work in CL has led to major advances in selfsup
 </p>
 
 More information on:
-* SupContrast - Supervised (check https://arxiv.org/abs/2004.11362 & https://arxiv.org/abs/2002.05709)
-* SimCLR - Unsupervised (check https://arxiv.org/abs/2004.11362 & https://arxiv.org/abs/2002.05709) 
+* SupContrast - Self-Supervised (see https://arxiv.org/abs/2002.05709)
+* SimCLR - Unsupervised (see https://arxiv.org/abs/2004.11362) 
 
 
 ## 3. What is Multiple Instance Learning
