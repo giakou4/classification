@@ -67,6 +67,9 @@ This is for demonstation purposes only. The results are not validated correctly.
 
 ### 7.4 CNN Ensemble
 <p align="center">
+  <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble_before.jpg?raw=true">
+</p>
+<p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble.jpg?raw=true">
 </p>
 
