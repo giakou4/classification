@@ -66,10 +66,13 @@ This is for demonstation purposes only. The results are not validated correctly.
 </p>
 
 ### 7.4 CNN Ensemble
+
+Individual performance of 10 CNN trained on the same training dataset
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble_before.jpg?raw=true">
 </p>
 
+Results after the Ensemble for minimizing loss and maximizing accuracy
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble.jpg?raw=true">
 </p>
