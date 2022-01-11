@@ -33,33 +33,41 @@ More information on:
 * Attention (see https://github.com/AMLab-Amsterdam/AttentionDeepMIL)
 * Gated Attention (see https://github.com/AMLab-Amsterdam/AttentionDeepMIL)
 
+## 4. Ensemble Methods
+An ensemble is a collection of models designed to outperform every single one of them by combining their predictions.
 
-## 4. Requirements
+## 5. Requirements
 
 ```
 torch
 torchvision
 matplotlib
 numpy
+seaborn
 ```
 
-## 5. Note
+## 6. Note
 This is for demonstation purposes only. The results are not validated correctly. That means that no validation protocol is applied (e.g. KFold Cross Validation). The parameters are not optimized, rather than arbitrarily chosen. The network is chosen to demonstate every possible CNN layer. Early Stopping and Scheduler are implemented for demonstration aswell.
 
-## 6. Results
-### 6.1 CNN
+## 7. Results
+### 7.1 CNN
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn.jpg?raw=true">
 </p>
 
-### 6.2 SimCLR
+### 7.2 SimCLR
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/simclr.jpg?raw=true">
 </p>
 
-### 6.3 MIL
+### 7.3 MIL
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/mil.jpg?raw=true">
+</p>
+
+### 7.4 CNN Ensemble
+<p align="center">
+  <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble.jpg?raw=true">
 </p>
 
 ## 7. Support
