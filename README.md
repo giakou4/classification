@@ -65,7 +65,7 @@ This is for demonstation purposes only. The results are not validated correctly.
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/mil.jpg?raw=true">
 </p>
 
-### 7.4 CNN Ensemble
+### 7.4 CNN Ensemble Selector
 
 Individual performance of 10 CNN trained on the same training dataset
 <p align="center">
@@ -76,6 +76,11 @@ Results after the Ensemble for minimizing loss and maximizing accuracy
 <p align="center">
   <img src="https://github.com/giakou4/MNIST_classification/blob/main/results/cnn_ensemble.jpg?raw=true">
 </p>
+
+### 7.5 CNN TorchEnsemble
+
+#### 7.5.1 Voting Classifier
+TBD
 
 ## 7. Support
 
