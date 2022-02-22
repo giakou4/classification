@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/57758089/155208605-aa8a1e56-16e4-418c-93db-1779bf76fcfc.png">
+  <img src="https://user-images.githubusercontent.com/57758089/155208705-dc522be7-8ad6-4792-917f-68b7412e9ea2.png">
 </p>
 
 # MNIST Classification
+
 
 Classification of the MNIST dataset in Pytorch using 3 different approaches:
 * Convolutional Neural Networks (CNN)
