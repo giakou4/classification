@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://camo.githubusercontent.com/01c057a753e92a9bc70b8c45d62b295431851c09cffadf53106fc0aea7e2843f/687474703a2f2f692e7974696d672e636f6d2f76692f3051493378675875422d512f687164656661756c742e6a7067">
+  <img src="https://user-images.githubusercontent.com/57758089/155206255-6cde3956-9b0e-4a2b-9c17-b2586a1cc0cb.png">
 </p>
 
 # MNIST Classification
