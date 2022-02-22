@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/57758089/155206255-6cde3956-9b0e-4a2b-9c17-b2586a1cc0cb.png">
+  <img src="https://user-images.githubusercontent.com/57758089/155206328-0e9aa605-3a76-4c88-a008-10d457ede32e.png">
 </p>
 
 # MNIST Classification
@@ -8,7 +8,6 @@ Classification of the MNIST dataset in Pytorch using 3 different approaches:
 * Convolutional Neural Networks (CNN)
 * Contrastive Learning (CL) framework SimCLR
 * Multiple Instance Learning (MIL)
-
 
 ## 1. Dataset
 The MNIST dataset is an acronym that stands for the Modified National Institute of Standards and Technology dataset. It is a dataset of 70,000 small square 28×28 pixel grayscale images of handwritten single digits between 0 and 9. It has a training set of 60,000 examples, and a test set of 10,000 examples.
