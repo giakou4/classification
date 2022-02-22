@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.png">
+  <img src="https://camo.githubusercontent.com/01c057a753e92a9bc70b8c45d62b295431851c09cffadf53106fc0aea7e2843f/687474703a2f2f692e7974696d672e636f6d2f76692f3051493378675875422d512f687164656661756c742e6a7067">
 </p>
 
 # MNIST Classification
