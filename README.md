@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.researchgate.net/profile/Jiheng-Wang/publication/252343403/figure/fig2/AS:298127161610241@1448090462535/A-random-sample-of-the-original-hand-written-digit-images-from-MINST-data.png">
+  <img src="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.png">
 </p>
 
 # MNIST Classification
