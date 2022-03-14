@@ -2,6 +2,9 @@
   <img src="https://user-images.githubusercontent.com/57758089/155208705-dc522be7-8ad6-4792-917f-68b7412e9ea2.png">
 </p>
 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/giakou4/MNIST_classification/LICENSE)
+
 # MNIST Classification
 
 
