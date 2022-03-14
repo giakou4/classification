@@ -4,6 +4,11 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/giakou4/MNIST_classification/LICENSE)
+![forks](https://img.shields.io/github/forks/giakou4/MNIST_classification.svg)
+![stars](https://img.shields.io/github/stars/giakou4/MNIST_classification.svg)
+![issues-open](https://img.shields.io/github/issues/giakou4/MNIST_classification.svg)
+![issues-closed](https://img.shields.io/github/issues-closed/giakou4/MNIST_classification.svg)
+![size](https://img.shields.io/github/languages/code-size/giakou4/MNIST_classification)
 
 # MNIST Classification
 
