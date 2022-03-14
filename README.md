@@ -2,6 +2,8 @@
   <img src="https://user-images.githubusercontent.com/57758089/155208705-dc522be7-8ad6-4792-917f-68b7412e9ea2.png">
 </p>
 
+# MNIST Classification
+
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/giakou4/MNIST_classification/LICENSE)
 ![forks](https://img.shields.io/github/forks/giakou4/MNIST_classification.svg)
@@ -9,9 +11,6 @@
 ![issues-open](https://img.shields.io/github/issues/giakou4/MNIST_classification.svg)
 ![issues-closed](https://img.shields.io/github/issues-closed/giakou4/MNIST_classification.svg)
 ![size](https://img.shields.io/github/languages/code-size/giakou4/MNIST_classification)
-
-# MNIST Classification
-
 
 Classification of the MNIST dataset in Pytorch using 3 different approaches:
 * Convolutional Neural Networks (CNN)
