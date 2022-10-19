@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/giakou4/MNIST_classification/blob/main/bg.jpg">
+</p>
+
+
 [comment]:<p align="center">
 [comment]:  <img src="https://user-images.githubusercontent.com/57758089/155208705-dc522be7-8ad6-4792-917f-68b7412e9ea2.png">
 [comment]:</p>
