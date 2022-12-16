@@ -1,5 +1,10 @@
-Flask
+numpy
+pandas 
+matplotlib
+seaborn 
 torch
 torchvision
-matplotlib
-numpy
+torchensemble
+tqdm
+albumentations
+PIL
